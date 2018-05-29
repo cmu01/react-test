@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-class App extends React.Component {
+class MyButton extends React.Component {
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
@@ -24,4 +24,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default MyButton;
