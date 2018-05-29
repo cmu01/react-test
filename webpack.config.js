@@ -79,9 +79,10 @@ module.exports = {
     new dashboardPlugin(),
     new webpack.HotModuleReplacementPlugin({
         multiStep: true
-    }),
-    new openBrowserPlugin({
-      url: `http://${options.host}:${options.port}`
     })
+    // }),
+    // new openBrowserPlugin({
+    //   url: `http://${options.host}:${options.port}`
+    // })
   ]
 };
