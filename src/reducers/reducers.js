@@ -1,14 +1,14 @@
-export default (state = {}, action) => {
+import $ from 'jquery';
+
+export default (state = {isInit: true}, action) => {
   switch (action.type) {
-    case 'updateName':
-      state.userName = action.value;
-      return state;
-    case 'updatePassWord':
-      state.passWord = action.value;
-      return state;
-    case 'saved':
-      console.log('saved', state)
-      return state;
+    // username and password aren't state.
+    // case 'updateName':
+    //   return Object.assign(state, {'userName': action.value});
+    // case 'updatePassWord':
+    //   return Object.assign(state, {'passWord': action.value});
+    case 'onCheck':
+      return Object.assign(state, {'status': action.status, isInit: false});
     default:
       return state
   }

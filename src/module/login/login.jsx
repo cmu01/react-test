@@ -62,30 +62,28 @@ export default class Login extends React.Component {
   }
 
   onClick(e) {
-    console.log(e, this.props, this.state);
+    this.props.onCheck(this.userName, this.passWord);
   }
 
   handleName(e) {
-    this.setState({
-      name: e.target.value
-    })
+    this.userName = e.target.value;
   }
 
   handlePwd(e) {
-    this.setState({
-      password: e.target.value
-    });
+    this.passWord = e.target.value;
   }
 
   render() {
-    const {onSaved, updateName, updatePassWord} = this.props;
-
     return (<div style={this.getStyle()}>
       <div style={this.getTitleStyle()}>Sign In Movie Discover</div>
-      <Input label='Email' type = 'email' floatingLabel={true} style={this.getInputStyle()} onChange={(e) => updateName(e)} required/>
-      <Input label = 'Password' type = 'password' floatingLabel={true} onChange={(e) => updatePassWord(e)} style={this.getInputStyle()} required/>
+      <Input label='Email' type = 'email' floatingLabel={true}
+        style={this.getInputStyle()} 
+        onChange={(e) => this.handleName(e)} required/>
+      <Input label = 'Password' type = 'password' 
+        floatingLabel={true} onChange={(e) => this.handlePwd(e)} 
+        style={this.getInputStyle()} required/>
       <div>
-        <Button style={{width: '100%'}} color='primary' onClick={e => onSaved(this.state)}>Sign In</Button>
+        <Button style={{width: '100%'}} color='primary' onClick={this.onClick}>Sign In</Button>
         <Checkbox name='Remember' label='Remember me' defaultChecked={false} />
         <a>Create an account</a>
         <a style={{float: 'right'}}>Forgot password</a>

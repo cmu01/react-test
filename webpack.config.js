@@ -63,6 +63,11 @@ module.exports = {
       },      
     ]
   },
+  resolve: {
+    // root: 'D:/project/LastOne/react-test',
+    // extensions: ['', '.js', '.jsx'],
+    alias: {}
+  },
   postcss: function() {
     return [
       autoprefixer({
